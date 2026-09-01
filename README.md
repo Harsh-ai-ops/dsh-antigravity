@@ -43,18 +43,22 @@ dsh web
 
 **Zero-touch setup happens automatically on startup**:
 1. If no account is linked, your default browser will **automatically open** to the Google OAuth sign-in page.
-2. Sign in and click Allow.
-3. The plugin captures your token, starts the internal gateway (`http://127.0.0.1:8787/v1`), and registers all Antigravity models directly into DSH.
+2. Sign in with your Google account and click **Allow**.
+3. The success page will show:
+   - ✅ **Account linked status** and current rotation pool count.
+   - 🔘 **[+ Link Another Account]** button to seamlessly connect 2nd or 3rd accounts right then and there.
+   - 🔘 **[✓ Done / Start Using DSH]** button to finish.
+4. The plugin saves your tokens locally to `~/.dsh/antigravity-keys.json`, starts the internal gateway (`http://127.0.0.1:8787/v1`), and registers all Antigravity models into your DSH model selector.
 
 ---
 
-## Adding More Accounts (Multi-Account Rotation)
+## Adding More Accounts Later
 
-If you want to pool multiple Google accounts for higher rate limits and automatic 429 rotation, you can add another account at any time by asking the DSH agent in chat:
+You can also link additional accounts anytime after the initial setup by asking the DSH agent in chat:
 
 > *"Add another Antigravity account"* or *"Log in to Antigravity"*
 
-The agent will execute the `antigravity_login` tool to link additional accounts into `~/.dsh/antigravity-keys.json`.
+The agent will execute the `antigravity_login` tool to add more accounts into the rotation pool.
 
 ---
 
