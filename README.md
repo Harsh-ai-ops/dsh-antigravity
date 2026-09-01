@@ -28,7 +28,7 @@ Route Google Antigravity models (including **Gemini 3.7 Flash with High Thinking
 In your terminal / PowerShell:
 
 ```bash
-dsh plugin --profile web add "github:yourusername/dsh-antigravity"
+dsh plugin --profile web add "github:Harsh-ai-ops/dsh-antigravity"
 ```
 
 *(Or from a local folder / tarball: `dsh plugin --profile web add ./path/to/dsh-antigravity`)*
