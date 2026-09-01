@@ -33,7 +33,7 @@ dsh plugin --profile web add "github:Harsh-ai-ops/dsh-antigravity"
 
 *(Or from a local folder / tarball: `dsh plugin --profile web add ./path/to/dsh-antigravity`)*
 
-### Step 2: Restart DSH
+### Step 2: Start DSH
 
 Start your DSH Web GUI:
 
@@ -41,25 +41,20 @@ Start your DSH Web GUI:
 dsh web
 ```
 
-On first startup, the plugin will:
-1. Start the internal Antigravity gateway on `http://127.0.0.1:8787/v1`.
-2. Automatically configure the `antigravity` provider in your DSH settings.
-3. Add the required local credential placeholder.
+**Zero-touch setup happens automatically on startup**:
+1. If no account is linked, your default browser will **automatically open** to the Google OAuth sign-in page.
+2. Sign in and click Allow.
+3. The plugin captures your token, starts the internal gateway (`http://127.0.0.1:8787/v1`), and registers all Antigravity models directly into DSH.
 
 ---
 
-## Authenticating your Google Account
+## Adding More Accounts (Multi-Account Rotation)
 
-In the DSH chat window, simply ask the agent:
+If you want to pool multiple Google accounts for higher rate limits and automatic 429 rotation, you can add another account at any time by asking the DSH agent in chat:
 
-> *"Log in to Antigravity"* or *"Authenticate Antigravity"*
+> *"Add another Antigravity account"* or *"Log in to Antigravity"*
 
-The agent will execute the `antigravity_login` tool, which:
-1. Opens your default browser to the Google OAuth consent page.
-2. Starts a temporary listener on `http://localhost:51121/oauth-callback`.
-3. Stores your token securely in `~/.dsh/antigravity-keys.json`.
-
-*(You can run this multiple times to link multiple Google accounts for rotation!)*
+The agent will execute the `antigravity_login` tool to link additional accounts into `~/.dsh/antigravity-keys.json`.
 
 ---
 
