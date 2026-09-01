@@ -1,7 +1,7 @@
 {
   "name": "dsh-antigravity",
-  "version": "1.0.0",
-  "description": "Native DeepSeek Harness plugin for Google Antigravity (Gemini 3.7 Flash Thinking High & Claude 3.7 Sonnet) with multi-account rotation",
+  "version": "1.1.0",
+  "description": "Native DeepSeek Harness plugin for Google Antigravity (Gemini 3.7 Flash Thinking High & Claude) with multi-account rotation, auto-login, and a live quota badge",
   "main": "lib/index.js",
   "type": "module",
   "keywords": [
@@ -11,13 +11,9 @@
     "gemini-3.7",
     "cordis"
   ],
-  "author": "",
+  "author": "Harsh-ai-ops",
   "license": "MIT",
   "dependencies": {},
-  "peerDependencies": {
-    "@deepseek-ai/dsh-settings": "*",
-    "@deepseek-ai/dsh-tools": "*"
-  },
   "dsh": {
     "bundle": {
       "patch": "./cordis.patch.yml"
