@@ -1,0 +1,4 @@
+# dsh bundle patch: mounts the Antigravity gateway service into the host profile
+- insert:
+    - id: dsh-antigravity
+      name: 'dsh-antigravity'
