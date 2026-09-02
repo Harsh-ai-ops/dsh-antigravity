@@ -1,6 +1,6 @@
 {
   "name": "dsh-antigravity",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Native DeepSeek Harness plugin for Google Antigravity (Gemini 3.7 Flash Thinking High & Claude) with multi-account rotation, auto-login, and a live quota badge",
   "type": "module",
   "main": "lib/index.js",
