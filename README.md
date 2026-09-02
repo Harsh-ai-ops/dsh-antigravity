@@ -17,6 +17,7 @@ Route Google Antigravity models (including **Gemini 3.7 Flash with High Thinking
   - `antigravity/gpt-oss-120b-medium`
 - 🔄 **Multi-Account Rotation**: Add multiple Google accounts; rate limits (429) automatically roll over to the next account.
 - 🛡️ **Built-in Schema Sanitizer**: Automatically cleans rich tool schemas down to Antigravity's required protobuf format so tool calls never throw 400s.
+- 📊 **Live Quota Badge**: A permanent badge in the DSH web UI (top-right) shows the active Google account and per-model quota bars, refreshed every 2 minutes.
 - 🔌 **Zero External Dependencies**: Does not require `superoc`, `opencode`, or `bun`. Everything runs inside DSH.
 
 ---
@@ -50,6 +51,14 @@ dsh web
    - 🔘 **[✓ Done / Start Using DSH]** button to finish.
 4. The plugin saves your tokens locally to `~/.dsh/antigravity-keys.json`, starts the internal gateway (`http://127.0.0.1:8787/v1`), and registers all Antigravity models into your DSH model selector.
 
+> **Port note**: the gateway defaults to port `8787`. If something else already listens there (e.g. a standalone gateway), the plugin logs a warning and continues — your models then route through whatever owns the port. To change it, set a `port` override in your profile's `cordis.patch.yml`:
+>
+> ```yaml
+> - id: dsh-antigravity
+>   config:
+>     port: 8788
+> ```
+
 ---
 
 ## Adding More Accounts Later
@@ -58,7 +67,7 @@ You can also link additional accounts anytime after the initial setup by asking 
 
 > *"Add another Antigravity account"* or *"Log in to Antigravity"*
 
-The agent will execute the `antigravity_login` tool to add more accounts into the rotation pool.
+The agent will execute the `antigravity_login` tool to add more accounts into the rotation pool. You can also ask *"check antigravity quota"* (`antigravity_status`) to see exactly how much quota each model family has left per account.
 
 ---
 
